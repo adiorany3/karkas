@@ -1017,13 +1017,14 @@ def tampilkan_hasil_streamlit(jenis_ternak, berat_hidup, hasil, bangsa=None, jen
                 persen_max = float(persen_range[1])
                 persen_avg = (persen_min + persen_max) / 2
                 
+                # Use the same default percentage values as defined in the calculation functions
                 default_persen = 0
                 if jenis_ternak.lower() == "sapi":
-                    default_persen = 52.5
+                    default_persen = 52.5  # Matches the value in hitung_komponen_sapi
                 elif jenis_ternak.lower() == "kambing":
-                    default_persen = 45.0
+                    default_persen = 45.0  # Matches the value in hitung_komponen_kambing
                 elif jenis_ternak.lower() == "domba":
-                    default_persen = 47.0
+                    default_persen = 47.0  # Matches the value in hitung_komponen_domba
                 
                 col1, col2, col3 = st.columns(3)
                 with col1:
