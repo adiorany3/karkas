@@ -2,6 +2,21 @@
 
 Aplikasi ini menghitung perkiraan berat komponen karkas dan non-karkas untuk berbagai jenis ternak di Indonesia berdasarkan berat hidup.
 
+## Fitur
+
+- Kalkulasi otomatis komponen karkas dan non-karkas
+- Dukungan untuk berbagai jenis ternak Indonesia
+- Hasil perhitungan yang akurat berdasarkan penelitian ilmiah
+- Antarmuka yang mudah digunakan
+
+## Cara Penggunaan
+
+1. Clone repository ini
+2. Buka aplikasi melalui file index.html
+3. Pilih jenis ternak
+4. Masukkan berat hidup
+5. Lihat hasil perhitungan komponen karkas dan non-karkas
+
 ## Jenis Ternak yang Disupport
 
 ### Sapi
@@ -33,3 +48,33 @@ Sapi perah afkir (culled dairy cattle) adalah sapi perah yang tidak lagi produkt
    - Cocok untuk pengolahan daging yang memerlukan pemasakan lama
 
 Pemanfaatan sapi perah afkir merupakan bagian dari strategi efisiensi industri peternakan, di mana sapi dengan produktivitas susu menurun dapat dimanfaatkan untuk produksi daging.
+
+## Teknologi
+
+Aplikasi ini dibangun menggunakan:
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap
+
+## Developer
+
+Aplikasi ini dikembangkan oleh:
+
+**Galuh Adi Insani**
+- GitHub: [github.com/adiorany3](https://github.com/adiorany3)
+
+## Lisensi
+
+© 2023 Hak Cipta Dilindungi
+
+## Kontribusi
+
+Kontribusi selalu diterima. Untuk berkontribusi:
+1. Fork repository
+2. Buat branch fitur baru
+3. Kirim pull request
+
+## Kontak
+
+Untuk pertanyaan atau saran, silakan hubungi pengembang melalui email yang tersedia di bagian Developer.
