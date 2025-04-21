@@ -1002,6 +1002,15 @@ def tampilkan_hasil_streamlit(jenis_ternak, berat_hidup, hasil, bangsa=None, jen
                 
                 st.subheader("Perbandingan dengan Standar")
                 
+                # Add explanation for the comparison section
+                st.info("""
+                **Perbandingan dengan Standar:** 
+                Bagian ini menunjukkan perbandingan antara parameter ternak yang dipilih dengan nilai standar atau ideal. 
+                Angka positif menunjukkan nilai di atas standar, sedangkan angka negatif menunjukkan nilai di bawah standar.
+                Perbedaan ini dapat disebabkan oleh faktor genetik, manajemen pemeliharaan, 
+                atau kondisi lingkungan yang berbeda.
+                """)
+                
                 persen_str = data_bangsa['persen_karkas']
                 persen_range = persen_str.replace('%', '').split('-')
                 persen_min = float(persen_range[0])
@@ -1018,8 +1027,29 @@ def tampilkan_hasil_streamlit(jenis_ternak, berat_hidup, hasil, bangsa=None, jen
                 
                 col1, col2, col3 = st.columns(3)
                 with col1:
-                    st.metric("Persentase Karkas Bangsa Ini", f"{persen_avg:.1f}%", 
-                             f"{persen_avg - default_persen:.1f}%" if persen_avg != default_persen else "0%")
+                    # Add tooltip explanation for persentase karkas metric
+                    karkas_diff = persen_avg - default_persen
+                    karkas_help = f"""
+                    Perbandingan persentase karkas bangsa {bangsa} ({persen_avg:.1f}%) 
+                    dengan nilai standar untuk {jenis_ternak} ({default_persen:.1f}%).
+                    Nilai positif menunjukkan bangsa ini memiliki persentase karkas lebih tinggi dari standar,
+                    yang berarti efisiensi produksi daging lebih tinggi.
+                    """
+                    
+                    st.metric(
+                        "Persentase Karkas Bangsa Ini", 
+                        f"{persen_avg:.1f}%", 
+                        f"{karkas_diff:.1f}%" if karkas_diff != 0 else "0%",
+                        help=karkas_help
+                    )
+                    
+                    # Add additional explanation below the metric
+                    if karkas_diff > 1:
+                        st.caption(f"👍 Bangsa ini memiliki persentase karkas {karkas_diff:.1f}% lebih tinggi dari standar {jenis_ternak}.")
+                    elif karkas_diff < -1:
+                        st.caption(f"👎 Bangsa ini memiliki persentase karkas {abs(karkas_diff):.1f}% lebih rendah dari standar {jenis_ternak}.")
+                    else:
+                        st.caption("✓ Persentase karkas bangsa ini sesuai dengan standar.")
                 
                 with col2:
                     berat_jantan = data_bangsa['berat_jantan'].replace(' kg', '').split('-')
@@ -1029,20 +1059,253 @@ def tampilkan_hasil_streamlit(jenis_ternak, berat_hidup, hasil, bangsa=None, jen
                     berat_betina_avg = (float(berat_betina[0]) + float(berat_betina[1])) / 2
                     
                     if jenis_kelamin and jenis_kelamin.lower() == 'betina':
-                        st.metric("Berat Hidup Rata-rata", f"{berat_betina_avg:.1f} kg", 
-                                 f"{berat_hidup - berat_betina_avg:.1f} kg")
+                        berat_diff = berat_hidup - berat_betina_avg
+                        berat_help = f"""
+                        Perbandingan berat hidup ternak yang diinput ({berat_hidup:.1f} kg) 
+                        dengan berat rata-rata {jenis_ternak} betina bangsa {bangsa} ({berat_betina_avg:.1f} kg).
+                        Nilai positif menunjukkan ternak lebih berat dari rata-rata bangsa ini,
+                        yang dapat mengindikasikan manajemen pemeliharaan yang baik atau umur yang lebih dewasa.
+                        """
+                        
+                        st.metric(
+                            "Berat Hidup Rata-rata", 
+                            f"{berat_betina_avg:.1f} kg", 
+                            f"{berat_diff:.1f} kg",
+                            help=berat_help
+                        )
+                        
+                        # Add additional explanation
+                        pct_diff = (berat_diff / berat_betina_avg) * 100
+                        if pct_diff > 10:
+                            st.caption(f"⭐ Ternak ini {pct_diff:.1f}% lebih berat dari rata-rata bangsa ini (betina).")
+                        elif pct_diff < -10:
+                            st.caption(f"⚠️ Ternak ini {abs(pct_diff):.1f}% lebih ringan dari rata-rata bangsa ini (betina).")
+                        else:
+                            st.caption("✓ Berat ternak ini sesuai dengan rata-rata bangsa.")
                     else:
-                        st.metric("Berat Hidup Rata-rata", f"{berat_jantan_avg:.1f} kg", 
-                                 f"{berat_hidup - berat_jantan_avg:.1f} kg")
+                        berat_diff = berat_hidup - berat_jantan_avg
+                        berat_help = f"""
+                        Perbandingan berat hidup ternak yang diinput ({berat_hidup:.1f} kg) 
+                        dengan berat rata-rata {jenis_ternak} jantan bangsa {bangsa} ({berat_jantan_avg:.1f} kg).
+                        Nilai positif menunjukkan ternak lebih berat dari rata-rata bangsa ini,
+                        yang dapat mengindikasikan manajemen pemeliharaan yang baik atau umur yang lebih dewasa.
+                        """
+                        
+                        st.metric(
+                            "Berat Hidup Rata-rata", 
+                            f"{berat_jantan_avg:.1f} kg", 
+                            f"{berat_diff:.1f} kg",
+                            help=berat_help
+                        )
+                        
+                        # Add additional explanation
+                        pct_diff = (berat_diff / berat_jantan_avg) * 100
+                        if pct_diff > 10:
+                            st.caption(f"⭐ Ternak ini {pct_diff:.1f}% lebih berat dari rata-rata bangsa ini (jantan).")
+                        elif pct_diff < -10:
+                            st.caption(f"⚠️ Ternak ini {abs(pct_diff):.1f}% lebih ringan dari rata-rata bangsa ini (jantan).")
+                        else:
+                            st.caption("✓ Berat ternak ini sesuai dengan rata-rata bangsa.")
                 
                 with col3:
                     if jenis_kelamin and jenis_kelamin.lower() == 'betina':
                         karkas_ideal = berat_hidup * persen_min / 100
+                        karkas_diff = karkas_ideal - hasil['karkas']
+                        
+                        karkas_ideal_help = f"""
+                        Perbandingan karkas ideal ({karkas_ideal:.1f} kg) yang dihitung berdasarkan 
+                        persentase minimum karkas untuk bangsa {bangsa} ({persen_min:.1f}%) 
+                        dengan hasil perhitungan karkas aktual ({hasil['karkas']:.1f} kg).
+                        Nilai positif menunjukkan karkas ideal lebih berat, yang berarti 
+                        ada potensi untuk peningkatan produksi karkas.
+                        """
+                        
+                        st.metric(
+                            "Karkas Ideal", 
+                            f"{karkas_ideal:.1f} kg", 
+                            f"{karkas_diff:.1f} kg",
+                            help=karkas_ideal_help
+                        )
+                        
+                        # Add explanation based on the direction of difference
+                        pct_diff = (karkas_diff / karkas_ideal) * 100
+                        if abs(pct_diff) < 5:
+                            st.caption("✓ Karkas aktual sesuai dengan karkas ideal untuk bangsa ini.")
+                        elif karkas_diff > 0:
+                            st.caption(f"📈 Ada potensi peningkatan karkas sebesar {karkas_diff:.1f} kg ({pct_diff:.1f}%).")
+                        else:
+                            st.caption(f"👍 Karkas aktual {abs(karkas_diff):.1f} kg ({abs(pct_diff):.1f}%) lebih tinggi dari ideal!")
                     else:
                         karkas_ideal = berat_hidup * persen_max / 100
-                    
-                    st.metric("Karkas Ideal", f"{karkas_ideal:.1f} kg", 
-                             f"{karkas_ideal - hasil['karkas']:.1f} kg")
+                        karkas_diff = karkas_ideal - hasil['karkas']
+                        
+                        karkas_ideal_help = f"""
+                        Perbandingan karkas ideal ({karkas_ideal:.1f} kg) yang dihitung berdasarkan 
+                        persentase maksimum karkas untuk bangsa {bangsa} ({persen_max:.1f}%) 
+                        dengan hasil perhitungan karkas aktual ({hasil['karkas']:.1f} kg).
+                        Nilai positif menunjukkan karkas ideal lebih berat, yang berarti 
+                        ada potensi untuk peningkatan produksi karkas.
+                        """
+                        
+                        st.metric(
+                            "Karkas Ideal", 
+                            f"{karkas_ideal:.1f} kg", 
+                            f"{karkas_diff:.1f} kg",
+                            help=karkas_ideal_help
+                        )
+                        
+                        # Add explanation based on the direction of difference
+                        pct_diff = (karkas_diff / karkas_ideal) * 100
+                        if abs(pct_diff) < 5:
+                            st.caption("✓ Karkas aktual sesuai dengan karkas ideal untuk bangsa ini.")
+                        elif karkas_diff > 0:
+                            st.caption(f"📈 Ada potensi peningkatan karkas sebesar {karkas_diff:.1f} kg ({pct_diff:.1f}%).")
+                        else:
+                            st.caption(f"👍 Karkas aktual {abs(karkas_diff):.1f} kg ({abs(pct_diff):.1f}%) lebih tinggi dari ideal!")
+                
+                # Add a visualization of the comparison metrics
+                st.write("#### Visualisasi Perbandingan")
+                
+                # Create data for the visualization
+                comparison_data = {
+                    'Kategori': ['Persentase Karkas (%)', 'Berat Hidup (kg)', 'Karkas (kg)'],
+                    'Nilai Aktual': [
+                        hasil['karkas']/berat_hidup*100,
+                        berat_hidup,
+                        hasil['karkas']
+                    ],
+                    'Nilai Standar/Ideal': [
+                        persen_avg if jenis_kelamin.lower() == 'betina' else persen_avg,
+                        berat_betina_avg if jenis_kelamin.lower() == 'betina' else berat_jantan_avg,
+                        karkas_ideal
+                    ]
+                }
+                
+                # Create DataFrame
+                comparison_df = pd.DataFrame(comparison_data)
+                
+                # Create bar chart
+                fig_comparison, ax_comparison = plt.subplots(figsize=(10, 5))
+                
+                # Set positions and width
+                pos = np.arange(len(comparison_df['Kategori']))
+                width = 0.35
+                
+                # Create bars
+                bar1 = ax_comparison.bar(
+                    pos - width/2, 
+                    comparison_df['Nilai Aktual'], 
+                    width, 
+                    label='Nilai Aktual', 
+                    color='#66b3ff'
+                )
+                
+                bar2 = ax_comparison.bar(
+                    pos + width/2, 
+                    comparison_df['Nilai Standar/Ideal'], 
+                    width, 
+                    label='Nilai Standar/Ideal', 
+                    color='#ff9999'
+                )
+                
+                # Add labels and title
+                ax_comparison.set_ylabel('Nilai')
+                ax_comparison.set_title(f'Perbandingan Nilai Aktual vs Standar/Ideal untuk {bangsa}')
+                ax_comparison.set_xticks(pos)
+                ax_comparison.set_xticklabels(comparison_df['Kategori'])
+                ax_comparison.legend()
+                
+                # Add data labels
+                def autolabel(rects):
+                    for rect in rects:
+                        height = rect.get_height()
+                        ax_comparison.annotate(
+                            f'{height:.1f}',
+                            xy=(rect.get_x() + rect.get_width()/2, height),
+                            xytext=(0, 3),
+                            textcoords="offset points",
+                            ha='center', va='bottom',
+                            fontsize=9
+                        )
+                
+                autolabel(bar1)
+                autolabel(bar2)
+                
+                plt.tight_layout()
+                st.pyplot(fig_comparison)
+                
+                # Add contextual information
+                st.caption("""
+                **Keterangan Grafik:**
+                Grafik ini membandingkan nilai aktual (biru) dengan nilai standar/ideal (merah) untuk 
+                persentase karkas, berat hidup, dan berat karkas. Selisih antara kedua nilai menunjukkan 
+                seberapa dekat ternak yang dianalisis dengan standar atau potensi idealnya.
+                """)
+                
+                # Add recommendations based on the comparison
+                st.subheader("Rekomendasi")
+                
+                recommendations = []
+                
+                # Persentase karkas recommendations
+                if karkas_diff > 2:
+                    recommendations.append(
+                        "🔹 **Perbaikan Persentase Karkas:** Ternak ini memiliki persentase karkas di bawah ideal. "
+                        "Pertimbangkan untuk memperbaiki manajemen pakan dengan meningkatkan rasio konsentrat "
+                        "pada fase penggemukan dan evaluasi ulang program nutrisi."
+                    )
+                elif karkas_diff < -2:
+                    recommendations.append(
+                        "🔹 **Persentase Karkas Optimal:** Ternak ini memiliki persentase karkas di atas ideal. "
+                        "Ini menunjukkan efisiensi produksi daging yang sangat baik. Pertahankan manajemen pemeliharaan saat ini."
+                    )
+                
+                # Berat hidup recommendations
+                if jenis_kelamin.lower() == 'betina':
+                    if berat_diff < -10:
+                        recommendations.append(
+                            "🔹 **Berat Hidup Sub-optimal:** Ternak betina ini lebih ringan dari rata-rata bangsa. "
+                            "Evaluasi sistem pemeliharaan, kualitas pakan, dan jadwal pemberian pakan. "
+                            "Pertimbangkan untuk menambah asupan nutrisi atau memeriksa kesehatan ternak."
+                        )
+                    elif berat_diff > 10:
+                        recommendations.append(
+                            "🔹 **Berat Hidup Superior:** Ternak betina ini lebih berat dari rata-rata bangsa. "
+                            "Ini menunjukkan manajemen pemeliharaan yang baik. Jika ternak ini akan digunakan untuk "
+                            "reproduksi, pertimbangkan untuk melestarikan genetiknya."
+                        )
+                else:
+                    if berat_diff < -10:
+                        recommendations.append(
+                            "🔹 **Berat Hidup Sub-optimal:** Ternak jantan ini lebih ringan dari rata-rata bangsa. "
+                            "Evaluasi sistem pemeliharaan, kualitas pakan, dan jadwal pemberian pakan. "
+                            "Periode penggemukan lebih lama mungkin diperlukan untuk mencapai berat optimal."
+                        )
+                    elif berat_diff > 10:
+                        recommendations.append(
+                            "🔹 **Berat Hidup Superior:** Ternak jantan ini lebih berat dari rata-rata bangsa. "
+                            "Ini bisa menjadi indikasi genetik unggul atau manajemen pemeliharaan yang sangat baik. "
+                            "Jika ternak ini akan digunakan sebagai pejantan, genetiknya bernilai untuk dipertahankan."
+                        )
+                
+                # Add general recommendations if no specific ones
+                if not recommendations:
+                    recommendations.append(
+                        "🔹 **Kinerja Sesuai Standar:** Ternak ini menunjukkan kinerja sesuai dengan standar bangsa. "
+                        "Lanjutkan dengan manajemen pemeliharaan yang saat ini diterapkan."
+                    )
+                else:
+                    # Add a general recommendation at the end
+                    recommendations.append(
+                        "🔹 **Catatan Umum:** Performa ternak dipengaruhi oleh faktor genetik, pakan, kesehatan, "
+                        "dan lingkungan. Perbandingan ini memberikan gambaran umum, tetapi evaluasi menyeluruh "
+                        "harus mempertimbangkan kondisi spesifik lokasi dan sistem produksi."
+                    )
+                
+                # Display all recommendations
+                for rec in recommendations:
+                    st.markdown(rec)
+            
             else:
                 st.warning(f"Data detail untuk bangsa {bangsa} tidak ditemukan")
         else:
