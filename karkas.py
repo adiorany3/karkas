@@ -208,12 +208,32 @@ def tampilkan_hasil_streamlit(jenis_ternak, berat_hidup, hasil, bangsa=None, jen
         merupakan bagian utama yang dikonsumsi.
         """)
         
-        # Penjelasan khusus untuk komponen Tulang
+        # Penjelasan komponen karkas
+        st.success("""
+        **Karkas:** Bagian tubuh hasil pemotongan ternak setelah dikurangi darah, kepala, kaki, kulit, 
+        organ dalam, dan ekor. Karkas umumnya terdiri dari daging, tulang, dan lemak dalam perbandingan 
+        bervariasi tergantung jenis ternak, umur, dan kondisi ternak.
+        """)
+        
+        st.success("""
+        **Daging:** Merupakan komponen utama karkas yang terdiri dari otot dan jaringan ikat seperti 
+        tendon dan ligamen. Daging menyumbang sekitar 70-80% dari berat karkas. Komponen ini memiliki 
+        nilai ekonomis dan nutrisi tertinggi dalam karkas, mengandung protein berkualitas tinggi, 
+        vitamin B kompleks, zat besi, dan mineral penting lainnya.
+        """)
+        
         st.success("""
         **Tulang:** Merupakan struktur keras yang menyusun kerangka karkas ternak. Tulang 
         berkontribusi sekitar 15-20% dari total karkas. Komponen ini memiliki nilai ekonomis 
         yang signifikan sebagai sumber kalsium, kolagen, dan bahan dasar produk seperti kaldu, soup stock, 
         dan gelatin. Tulang juga bisa diolah menjadi tepung tulang sebagai pakan ternak atau pupuk.
+        """)
+        
+        st.success("""
+        **Lemak:** Jaringan adiposa yang terdistribusi di berbagai lokasi karkas seperti lemak 
+        subkutan (di bawah kulit), lemak intermuskular (di antara otot), dan lemak intramuskular (marbling). 
+        Lemak memengaruhi cita rasa, juiciness, dan keempukan daging. Persentase lemak karkas bervariasi 
+        tergantung jenis ternak, umur, pakan, dan genetik, berkisar antara 5-30% dari berat karkas.
         """)
         
         df_karkas = pd.DataFrame(data_karkas)
@@ -227,7 +247,7 @@ def tampilkan_hasil_streamlit(jenis_ternak, berat_hidup, hasil, bangsa=None, jen
         dan dapat dimanfaatkan (edible dan non-edible offal).
         """)
         
-        # Penjelasan khusus untuk komponen Kulit
+        # Penjelasan komponen non-karkas
         st.success("""
         **Kulit:** Merupakan komponen non-karkas dengan nilai ekonomis tertinggi. Kulit ternak 
         terutama sapi, memiliki bobot sekitar 7-10% dari berat hidup. Kulit dimanfaatkan untuk 
@@ -236,7 +256,39 @@ def tampilkan_hasil_streamlit(jenis_ternak, berat_hidup, hasil, bangsa=None, jen
         jenis kelamin, dan cara penanganan pasca penyembelihan.
         """)
         
-        # Penjelasan khusus untuk komponen Jeroan Hijau
+        st.success("""
+        **Kepala:** Termasuk tengkorak, otak, lidah, dan pipi. Kepala menyumbang sekitar 4-8% dari 
+        berat hidup ternak. Di Indonesia, komponen ini umum dimanfaatkan untuk makanan tradisional 
+        seperti sop atau gulai kepala, dendeng kepala, dan olahan lidah. Otak juga dikonsumsi dengan 
+        berbagai olahan kuliner.
+        """)
+        
+        st.success("""
+        **Kaki:** Terdiri dari tulang dan sedikit daging serta tendon kaki depan dan belakang 
+        dari ternak. Kaki menyumbang sekitar 2-3% dari berat hidup. Di Indonesia, kaki ternak 
+        umum diolah menjadi kikil, soup, atau kaldu karena mengandung kolagen tinggi.
+        """)
+        
+        st.success("""
+        **Ekor:** Komponen yang terdiri dari tulang ekor dan jaringan otot di sekitarnya. 
+        Ekor ternak terutama sapi populer diolah menjadi sup buntut (oxtail soup) karena rasanya 
+        yang khas dan kandungan kolagen yang tinggi. Ekor menyumbang sekitar 0.3-1% dari berat hidup.
+        """)
+        
+        st.success("""
+        **Darah:** Merupakan komponen cair yang dikumpulkan saat penyembelihan. Darah menyumbang 
+        sekitar 3-5% dari berat hidup. Kaya akan protein, zat besi, dan vitamin B. Di Indonesia, 
+        darah ternak khususnya sapi dan babi sering dimanfaatkan untuk produk seperti mie ayam, 
+        sate padang, dan lawar Bali.
+        """)
+        
+        st.success("""
+        **Jeroan Merah:** Mencakup organ vital seperti hati, jantung, paru-paru, limpa, dan ginjal. 
+        Jeroan merah menyumbang sekitar 3-5% dari berat hidup. Kaya akan vitamin A, zat besi, dan 
+        protein. Di Indonesia, jeroan merah banyak dikonsumsi dalam bentuk sate padang, tongseng, 
+        dan gulai.
+        """)
+        
         st.success("""
         **Jeroan Hijau:** Mencakup saluran pencernaan ternak seperti rumen (perut besar), 
         retikulum, omasum, abomasum, usus besar, dan usus kecil. Jeroan hijau berkontribusi 
@@ -244,6 +296,21 @@ def tampilkan_hasil_streamlit(jenis_ternak, berat_hidup, hasil, bangsa=None, jen
         yang tinggi seperti babat, iso, usus untuk makanan tradisional seperti soto, gulai, 
         dan sup. Jeroan hijau juga mengandung nutrisi seperti protein dan zat besi.
         """)
+        
+        st.success("""
+        **Lemak Internal:** Mencakup lemak yang menyelimuti organ dalam seperti lemak ginjal, 
+        lemak perut (omental), dan lemak pelvis. Lemak internal menyumbang sekitar 3-5% dari berat hidup. 
+        Dapat dimanfaatkan untuk industri pangan (tallow, lard) dan non-pangan seperti kosmetik, 
+        biodiesel, dan industri sabun.
+        """)
+        
+        if jenis_ternak.lower() == "domba":
+            st.success("""
+            **Wol:** Merupakan bulu atau rambut halus yang menutupi tubuh domba. Wol adalah produk 
+            non-karkas bernilai ekonomis tinggi, digunakan sebagai bahan dasar tekstil, pakaian, 
+            selimut, dan kerajinan. Kualitas wol dipengaruhi oleh genetik, nutrisi, dan manajemen 
+            pemeliharaan. Wol menyumbang sekitar 3-5% dari berat hidup domba.
+            """)
         
         df_non_karkas = pd.DataFrame(data_non_karkas)
         st.dataframe(df_non_karkas.style.highlight_max(axis=0, subset=['Berat (kg)']), use_container_width=True)
