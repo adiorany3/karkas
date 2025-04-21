@@ -75,6 +75,69 @@ SAPI = {
             "persen_karkas": "51-55%",
             "keunggulan": "Pertumbuhan cepat, adaptasi baik dengan lingkungan tropis",
             "search_url": "https://www.google.com/search?q=Sapi+Peranakan+Ongole+PO+Indonesia"
+        },
+        "Sapi Limousin Cross": {
+            "asal": "Persilangan sapi lokal dengan sapi Limousin dari Prancis",
+            "ciri_khas": "Warna coklat kemerahan, tubuh besar, tanpa punuk",
+            "berat_jantan": "700-900 kg",
+            "berat_betina": "500-700 kg",
+            "persen_karkas": "53-58%",
+            "keunggulan": "Pertumbuhan sangat cepat, kualitas daging premium, konformasi tubuh baik",
+            "search_url": "https://www.google.com/search?q=Sapi+Limousin+Cross+Indonesia"
+        },
+        "Sapi Simmental Cross": {
+            "asal": "Persilangan sapi lokal dengan sapi Simmental dari Swiss",
+            "ciri_khas": "Warna coklat kemerahan dengan bercak putih di kepala dan kaki",
+            "berat_jantan": "750-950 kg",
+            "berat_betina": "550-750 kg",
+            "persen_karkas": "54-59%",
+            "keunggulan": "Pertumbuhan sangat cepat, produksi daging tinggi, temperamen jinak",
+            "search_url": "https://www.google.com/search?q=Sapi+Simmental+Cross+Indonesia"
+        },
+        "Sapi Brahman Cross": {
+            "asal": "Persilangan sapi lokal dengan sapi Brahman dari Amerika",
+            "ciri_khas": "Punuk besar, kulit longgar, telinga panjang, warna abu-abu atau merah",
+            "berat_jantan": "600-800 kg",
+            "berat_betina": "450-650 kg",
+            "persen_karkas": "52-56%",
+            "keunggulan": "Tahan panas, tahan caplak, pertumbuhan cepat di daerah tropis",
+            "search_url": "https://www.google.com/search?q=Sapi+Brahman+Cross+Indonesia"
+        },
+        "Sapi Belgian Blue Cross": {
+            "asal": "Persilangan sapi lokal dengan sapi Belgian Blue dari Belgia",
+            "ciri_khas": "Otot sangat berkembang (double muscling), warna putih-biru",
+            "berat_jantan": "800-1100 kg",
+            "berat_betina": "600-850 kg",
+            "persen_karkas": "56-62%",
+            "keunggulan": "Persentase daging sangat tinggi, rendah lemak, konformasi karkas superior",
+            "search_url": "https://www.google.com/search?q=Sapi+Belgian+Blue+Cross+Indonesia"
+        },
+        "Sapi Brangus": {
+            "asal": "Persilangan sapi Brahman dengan sapi Aberdeen Angus",
+            "ciri_khas": "Warna hitam, tanpa tanduk (polled), tubuh kompak",
+            "berat_jantan": "650-850 kg",
+            "berat_betina": "500-650 kg",
+            "persen_karkas": "53-58%",
+            "keunggulan": "Kombinasi ketahanan Brahman dan kualitas daging Angus, adaptasi tropis",
+            "search_url": "https://www.google.com/search?q=Sapi+Brangus+Indonesia"
+        },
+        "Sapi Droughtmaster": {
+            "asal": "Persilangan sapi Brahman dengan Shorthorn di Australia",
+            "ciri_khas": "Warna merah, punuk moderat, toleransi panas",
+            "berat_jantan": "600-850 kg",
+            "berat_betina": "450-650 kg",
+            "persen_karkas": "52-57%",
+            "keunggulan": "Ketahanan iklim tropis, efisiensi pakan, temperamen jinak",
+            "search_url": "https://www.google.com/search?q=Sapi+Droughtmaster+Indonesia"
+        },
+        "Sapi Wagyu Cross": {
+            "asal": "Persilangan sapi lokal dengan sapi Wagyu dari Jepang",
+            "ciri_khas": "Marbling (persebaran lemak) daging tinggi, warna hitam atau merah",
+            "berat_jantan": "650-850 kg",
+            "berat_betina": "500-650 kg",
+            "persen_karkas": "52-57%",
+            "keunggulan": "Kualitas daging premium, marbling tinggi, tekstur daging lembut",
+            "search_url": "https://www.google.com/search?q=Sapi+Wagyu+Cross+Indonesia"
         }
     }
 }
