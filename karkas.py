@@ -201,10 +201,50 @@ def tampilkan_hasil_streamlit(jenis_ternak, berat_hidup, hasil, bangsa=None, jen
     
     with tab1:
         st.subheader("Komponen Karkas")
+        st.info("""
+        **Komponen Karkas:** Bagian dari tubuh ternak yang telah disembelih dan dikuliti, 
+        tanpa kepala, kaki, ekor, dan organ dalam. Angka yang di-highlight menunjukkan 
+        komponen dengan berat tertinggi. Karkas terdiri dari daging, tulang, dan lemak yang 
+        merupakan bagian utama yang dikonsumsi.
+        """)
+        
+        # Penjelasan khusus untuk komponen Tulang
+        st.success("""
+        **Tulang:** Merupakan struktur keras yang menyusun kerangka karkas ternak. Tulang 
+        berkontribusi sekitar 15-20% dari total karkas. Komponen ini memiliki nilai ekonomis 
+        yang signifikan sebagai sumber kalsium, kolagen, dan bahan dasar produk seperti kaldu, soup stock, 
+        dan gelatin. Tulang juga bisa diolah menjadi tepung tulang sebagai pakan ternak atau pupuk.
+        """)
+        
         df_karkas = pd.DataFrame(data_karkas)
         st.dataframe(df_karkas.style.highlight_max(axis=0, subset=['Berat (kg)']), use_container_width=True)
         
         st.subheader("Komponen Non-Karkas")
+        st.info("""
+        **Komponen Non-Karkas:** Bagian ternak yang tidak termasuk dalam karkas, seperti kulit, 
+        kepala, kaki, ekor, darah, dan organ dalam. Angka yang di-highlight menunjukkan komponen 
+        dengan berat tertinggi. Meskipun bukan karkas, komponen ini tetap memiliki nilai ekonomis 
+        dan dapat dimanfaatkan (edible dan non-edible offal).
+        """)
+        
+        # Penjelasan khusus untuk komponen Kulit
+        st.success("""
+        **Kulit:** Merupakan komponen non-karkas dengan nilai ekonomis tertinggi. Kulit ternak 
+        terutama sapi, memiliki bobot sekitar 7-10% dari berat hidup. Kulit dimanfaatkan untuk 
+        industri penyamakan kulit (leather) untuk produksi sepatu, tas, jaket, ikat pinggang, 
+        dan berbagai produk fashion. Kualitas kulit dipengaruhi oleh bangsa ternak, umur, 
+        jenis kelamin, dan cara penanganan pasca penyembelihan.
+        """)
+        
+        # Penjelasan khusus untuk komponen Jeroan Hijau
+        st.success("""
+        **Jeroan Hijau:** Mencakup saluran pencernaan ternak seperti rumen (perut besar), 
+        retikulum, omasum, abomasum, usus besar, dan usus kecil. Jeroan hijau berkontribusi 
+        sekitar 8-12% dari berat hidup. Di Indonesia, komponen ini memiliki nilai konsumsi 
+        yang tinggi seperti babat, iso, usus untuk makanan tradisional seperti soto, gulai, 
+        dan sup. Jeroan hijau juga mengandung nutrisi seperti protein dan zat besi.
+        """)
+        
         df_non_karkas = pd.DataFrame(data_non_karkas)
         st.dataframe(df_non_karkas.style.highlight_max(axis=0, subset=['Berat (kg)']), use_container_width=True)
         
