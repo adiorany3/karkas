@@ -1,0 +1,189 @@
+Daftar Lengkap Referensi untuk Kalkulator Komponen Karkas
+
+1. Publikasi Ilmiah:
+   - Soeparno. (2015). Ilmu dan Teknologi Daging. Gadjah Mada University Press.
+   - Sutaryo, B., et al. (2018). "Karakteristik Karkas Sapi Potong di Indonesia." Jurnal Ilmu dan Teknologi Peternakan, 6(2), 54-63.
+   - Sunarlim, R., & Usmiati, S. (2016). "Karakteristik Daging Kambing dengan Perendaman Enzim Papain." Jurnal Ilmu Ternak dan Veteriner, 11(2), 105-111.
+   - Ginting, S. P., & Mahmilia, F. (2014). "Kualitas Karkas Kambing Kacang Jantan yang Diberi Pakan dengan Level Protein Berbeda." Jurnal Ilmu-Ilmu Peternakan, 24(1), 8-17.
+   - Budisatria, I. G. S., et al. (2017). "Pengaruh Jenis Kelamin terhadap Kinerja Produksi dan Kualitas Fisik Daging Ternak Domba." Buletin Peternakan, 41(4), 455-466.
+   - Tiesnamurti, B. (2019). Pengembangan Teknologi Produksi Domba di Indonesia. IAARD Press.
+
+2. Publikasi Pemerintah:
+   - Direktorat Jenderal Peternakan dan Kesehatan Hewan. (2020). Pedoman Teknis Pemotongan Ternak Ruminansia. Kementerian Pertanian Republik Indonesia.
+   - Badan Penelitian dan Pengembangan Pertanian. (2018). Petunjuk Teknis Budidaya Ternak Potong. Kementerian Pertanian Republik Indonesia.
+
+3. Database Internasional:
+   - FAO. (2019). Guidelines for slaughtering, meat cutting and further processing. Food and Agriculture Organization of the United Nations, Rome.
+   - International Livestock Research Institute. (2021). Small Ruminant Production and Processing. ILRI, Kenya.
+
+Catatan Metodologi:
+Persentase yang digunakan dalam kalkulator ini bersifat estimasi dan merupakan rata-rata dari berbagai penelitian pada ternak Indonesia dengan mempertimbangkan faktor breed, pakan, dan sistem produksi yang umum di Indonesia. Hasil aktual dapat bervariasi berdasarkan genetik, pakan, umur, jenis kelamin, dan kondisi pemeliharaan ternak.
+
+========================================================
+BANGSA TERNAK DI INDONESIA DAN SPESIFIKASINYA
+========================================================
+
+A. BANGSA SAPI DI INDONESIA
+
+1. Sapi Lokal/Asli Indonesia:
+   a) Sapi Bali
+      • Asal: Domestikasi dari banteng (Bos javanicus)
+      • Ciri khas: Warna merah bata, dengan warna hitam di kaki dan punggung (pada jantan dewasa)
+      • Berat hidup: Jantan 350-450 kg, Betina 250-350 kg
+      • Persentase karkas: 52-58%
+      • Keunggulan: Adaptasi yang baik terhadap lingkungan tropis, daya tahan terhadap pakan berkualitas rendah
+   
+   b) Sapi Aceh
+      • Asal: Aceh, turunan dari Bos indicus
+      • Ciri khas: Tubuh kecil, warna coklat kemerahan hingga coklat tua
+      • Berat hidup: Jantan 250-300 kg, Betina 200-250 kg
+      • Persentase karkas: 48-52%
+      • Keunggulan: Tahan terhadap iklim panas dan kekeringan
+   
+   c) Sapi Madura
+      • Asal: Madura, persilangan antara Bos indicus (zebu) dan Bos javanicus (banteng)
+      • Ciri khas: Warna merah kecoklatan, punuk kecil, tanduk pendek
+      • Berat hidup: Jantan 300-400 kg, Betina 200-300 kg
+      • Persentase karkas: 49-54%
+      • Keunggulan: Tahan cekaman panas, digunakan untuk karapan sapi
+
+2. Sapi Hasil Persilangan dan Introduksi:
+   a) Sapi Peranakan Ongole (PO)
+      • Asal: Persilangan sapi lokal dengan sapi Ongole dari India
+      • Ciri khas: Berwarna putih, bergelambir, dan berpunuk
+      • Berat hidup: Jantan 400-500 kg, Betina 300-400 kg
+      • Persentase karkas: 51-55%
+      • Keunggulan: Pertumbuhan cepat, adaptasi baik dengan lingkungan tropis
+   
+   b) Sapi Brahman Cross
+      • Asal: Persilangan sapi Brahman dengan sapi eropa atau lokal
+      • Ciri khas: Berpunuk besar, telinga lebar, warna abu-abu hingga merah
+      • Berat hidup: Jantan 550-800 kg, Betina 400-600 kg
+      • Persentase karkas: 54-58%
+      • Keunggulan: Pertumbuhan cepat, tahan panas, toleran terhadap parasit
+   
+   c) Sapi Limousin Cross
+      • Asal: Persilangan sapi Limousin dengan sapi lokal
+      • Ciri khas: Warna coklat kemerahan, bertubuh besar dan berotot
+      • Berat hidup: Jantan 650-900 kg, Betina 500-650 kg
+      • Persentase karkas: 56-60%
+      • Keunggulan: Pertumbuhan daging yang cepat, kualitas daging premium
+   
+   d) Sapi Simmental Cross
+      • Asal: Persilangan sapi Simmental dengan sapi lokal
+      • Ciri khas: Warna kecoklatan dengan bercak putih, tubuh besar
+      • Berat hidup: Jantan 700-950 kg, Betina 500-700 kg
+      • Persentase karkas: 56-61%
+      • Keunggulan: Pertumbuhan cepat, produksi daging tinggi
+
+B. BANGSA KAMBING DI INDONESIA
+
+1. Kambing Lokal Indonesia:
+   a) Kambing Kacang
+      • Asal: Asli Indonesia, tersebar di seluruh nusantara
+      • Ciri khas: Tubuh kecil, telinga pendek tegak, warna bervariasi (hitam, coklat, putih)
+      • Berat hidup: Jantan 20-30 kg, Betina 15-25 kg
+      • Persentase karkas: 44-47%
+      • Keunggulan: Prolifikasi tinggi, adaptasi sangat baik, tahan penyakit
+   
+   b) Kambing Peranakan Etawah (PE)
+      • Asal: Persilangan kambing Etawah (India) dengan kambing Kacang
+      • Ciri khas: Telinga panjang menggantung, hidung melengkung, bulu panjang
+      • Berat hidup: Jantan 50-80 kg, Betina 40-60 kg
+      • Persentase karkas: 45-49%
+      • Keunggulan: Dual purpose (daging dan susu), produksi susu 1-3 liter/hari
+   
+   c) Kambing Jawarandu
+      • Asal: Jawa Tengah, persilangan kambing Kacang dengan PE
+      • Ciri khas: Ukuran sedang, telinga setengah menggantung
+      • Berat hidup: Jantan 35-60 kg, Betina 25-45 kg
+      • Persentase karkas: 45-48%
+      • Keunggulan: Adaptasi baik, dual purpose, lebih mudah pemeliharaan
+   
+   d) Kambing Marica
+      • Asal: Sulawesi Selatan
+      • Ciri khas: Tubuh kecil, tanduk pendek, telinga kecil tegak
+      • Berat hidup: Jantan 15-25 kg, Betina 10-20 kg
+      • Persentase karkas: 43-46%
+      • Keunggulan: Tahan kondisi ekstrim, digemari untuk kuliner khas
+
+2. Kambing Introduksi dan Persilangan:
+   a) Kambing Boer
+      • Asal: Afrika Selatan, diintroduksi ke Indonesia
+      • Ciri khas: Tubuh besar, telinga lebar menggantung, kepala coklat-merah dengan badan putih
+      • Berat hidup: Jantan 80-120 kg, Betina 60-90 kg
+      • Persentase karkas: 48-52%
+      • Keunggulan: Pertumbuhan cepat, konformasi tubuh baik, efisiensi pakan tinggi
+   
+   b) Kambing Saanen
+      • Asal: Swiss, diintroduksi untuk produksi susu
+      • Ciri khas: Seluruh tubuh berwarna putih, telinga tegak
+      • Berat hidup: Jantan 70-100 kg, Betina 60-80 kg
+      • Persentase karkas: 43-47%
+      • Keunggulan: Produksi susu tinggi (3-5 liter/hari)
+   
+   c) Kambing Sapera
+      • Asal: Persilangan Saanen dengan PE
+      • Ciri khas: Warna dominan putih, ukuran lebih kecil dari Saanen
+      • Berat hidup: Jantan 60-80 kg, Betina 50-70 kg
+      • Persentase karkas: 44-48%
+      • Keunggulan: Produksi susu tinggi dengan adaptasi lebih baik di tropis
+
+C. BANGSA DOMBA DI INDONESIA
+
+1. Domba Lokal Indonesia:
+   a) Domba Ekor Tipis (DET)
+      • Asal: Asli Indonesia, tersebar di Jawa Barat dan Jawa Tengah
+      • Ciri khas: Ekor kecil dan pendek, warna dominan putih
+      • Berat hidup: Jantan 20-35 kg, Betina 15-25 kg
+      • Persentase karkas: 46-49%
+      • Keunggulan: Prolifikasi tinggi, adaptasi sangat baik
+   
+   b) Domba Ekor Gemuk (DEG)
+      • Asal: Indonesia Timur (Sulawesi, Lombok, Madura)
+      • Ciri khas: Ekor besar menyimpan lemak, warna dominan putih dengan bagian hitam di kepala
+      • Berat hidup: Jantan 30-45 kg, Betina 25-35 kg
+      • Persentase karkas: 47-52%
+      • Keunggulan: Tahan kondisi kering, efisien dalam menyimpan energi
+   
+   c) Domba Garut
+      • Asal: Garut, Jawa Barat, persilangan DET dengan domba Merino dan domba Cape
+      • Ciri khas: Tubuh kompak, kepala tegap, tanduk melingkar pada jantan
+      • Berat hidup: Jantan 40-80 kg, Betina 30-50 kg
+      • Persentase karkas: 48-52%
+      • Keunggulan: Konformasi tubuh baik, dikenal untuk domba aduan
+   
+   d) Domba Batur
+      • Asal: Banjarnegara, Jawa Tengah
+      • Ciri khas: Tubuh gemuk, warna putih, ekor pendek
+      • Berat hidup: Jantan 40-60 kg, Betina 30-45 kg
+      • Persentase karkas: 47-51%
+      • Keunggulan: Adaptasi di dataran tinggi, pertumbuhan baik
+
+2. Domba Introduksi dan Persilangan:
+   a) Domba Merino
+      • Asal: Spanyol/Australia, diintroduksi untuk wol
+      • Ciri khas: Wol tebal dan halus, tubuh besar
+      • Berat hidup: Jantan 70-100 kg, Betina 50-70 kg
+      • Persentase karkas: 48-52%
+      • Keunggulan: Produksi wol premium
+   
+   b) Domba Suffolk
+      • Asal: Inggris, diintroduksi untuk daging
+      • Ciri khas: Kepala dan kaki hitam, badan berisi dan berbulu putih
+      • Berat hidup: Jantan 90-130 kg, Betina 70-90 kg
+      • Persentase karkas: 50-55%
+      • Keunggulan: Pertumbuhan cepat, konformasi tubuh superior
+   
+   c) Domba Komposit (Composite Sheep)
+      • Asal: Hasil persilangan terencana di Balai Penelitian Ternak Indonesia
+      • Ciri khas: Campuran karakteristik dari berbagai bangsa
+      • Berat hidup: Jantan 50-75 kg, Betina 40-55 kg
+      • Persentase karkas: 49-53%
+      • Keunggulan: Pertumbuhan cepat, adaptasi baik, performa reproduksi tinggi
+
+Sumber: 
+- Balai Penelitian Ternak. (2022). Katalog Plasma Nutfah Ternak Indonesia.
+- Kementerian Pertanian. (2021). Peta Potensi Pengembangan Peternakan di Indonesia.
+- Asosiasi Peternak Sapi dan Kerbau Indonesia. (2020). Direktori Bangsa Sapi Indonesia.
+- Setiadi, B. (2018). Beternak Kambing dan Domba Unggul. Penebar Swadaya.
